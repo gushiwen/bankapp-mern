@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>BankApp</title>
+
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- we will put our teact component inside this div -->
+  <div id="root"></div>
+
+  <!-- load react -->
+  <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-router@5.2.1/umd/react-router.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-router-dom@5.2.1/umd/react-router-dom.min.js" crossorigin></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script defer src="./init-firebase.js"></script>
+
+  <!-- load our react component. -->
+  <script src="context.js" defer type="text/babel"></script>
+  <script src="navbar.js" defer type="text/babel"></script>
+  <script src="createaccount.js" defer type="text/babel"></script>
+  <script src="login.js" defer type="text/babel"></script>
+  <script src="deposit.js" defer type="text/babel"></script>
+  <script src="withdraw.js" defer type="text/babel"></script>
+  <script src="alldata.js" defer type="text/babel"></script>
+  <script src="home.js" defer type="text/babel"></script>
+  <script src="index.js" defer type="text/babel"></script>
+</body>
+
+</html>

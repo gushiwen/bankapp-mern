@@ -1,0 +1,198 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "BANK APP MERN CRUD",
+        "description": "My Bank App Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https//opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3001",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Users",
+            "description": "API for users in the system"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+
+    "paths": {
+        "/role/verify/{email}/{role}": {
+            "get": {
+                "tags": ["Users"],
+                "description": "Verify email and role",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "user email address",
+                        "type": "string"
+                    },
+                    {
+                        "name": "role",
+                        "in": "path",
+                        "required": true,
+                        "description": "user role",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/account/create/{name}/{email}/{password}/{role}": {
+            "get": {
+                "tags": ["Users"],
+                "description": "Create a new user",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "description": "user name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "user email address",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "required": true,
+                        "description": "user password",
+                        "type": "string"
+                    },
+                    {
+                        "name": "role",
+                        "in": "path",
+                        "required": true,
+                        "description": "user role",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/account/find/{email}": {
+            "get": {
+                "tags": ["Users"],
+                "description": "Get user details",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "user email address",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/account/update/balance/{email}/{balance}": {
+            "get": {
+                "tags": ["Users"],
+                "description": "Update user balance",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "required": true,
+                        "description": "user email address",
+                        "type": "string"
+                    },
+                    {
+                        "name": "balance",
+                        "in": "path",
+                        "required": true,
+                        "description": "user balance",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/account/all": {
+            "get": {
+                "tags": ["Users"],
+                "description": "Get all users",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    "definitions": {
+        "User": {
+            "required": ["name", "email", "password", "role", "balance"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "password": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "balance": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+
+}
